@@ -1,0 +1,148 @@
+oops principles:
+```
+
+  -> inheritance
+  -> polymorphism
+  -> abstraction
+  -> encapsulation
+  
+  
+inheritance:
+```
+it is the process of taking the properties from one class to another class.
+
+-redundancy(duplication of the code) is increased
+
+-memory usage also gets increased
+
+-degrading the application performance.
+
+base class:
+``
+the class which is giving the properites is known as parent/super/base class
+
+sub class:
+`
+the class which is taking the properties is known as child class/sub/derived class.
+
+
+syntax:
+``   
+   class <classname1>
+   {
+   //properties
+   }
+   class <classname2> extends <classname1>
+   {
+    //properties
+   }
+
+classname1 --> parent class
+
+classname2 -->child class
+
+extends :
+```
+extends is a java reserved keyword for the purpose of taking the properties
+from one class to another class.
+
+
+
+
+
+
+use of inheritance:
+````
+->reusability
+->peformance of applicatoin will get improved
+
+
+package com.capgemini.jse.inheritance;
+
+//parent class cum business logic class
+public class Parent1
+{
+	//logic
+	public void sum(int x, int y)
+	{
+		System.out.println("sum is : " +(x+y));
+	}
+}
+
+
+
+-----
+package com.capgemini.jse.inheritance;
+
+//child class cum business logic class
+public class Child1 extends Parent1 {
+
+	
+	
+}
+
+
+-------
+package com.capgemini.jse.inheritance;
+
+public class Test1 {
+	
+	 public static void main(String[] args) {
+		
+		 
+			/*
+			 * Parent1 obj = new Parent1();
+			 *  obj.sum(32,23);
+			 */
+		 
+		 Child1 obj = new Child1();
+		 
+		 obj.sum(34,34);
+		 
+	}
+
+}
+
+
+note:
+``
+whenever we create the object for child class, memory spaces will be created
+for both parent class and child class , so that w.r.to child class oject we are
+allowed to access both parent class and child class properties.
+
+
+where as w.r.to parent class object we are allowed to access only
+parent class proeprties.
+
+
+example for accessing Object class methods:
+````````
+package com.capgemini.jse.inheritance;
+
+//execution logic class
+public class Test1 {
+
+	public static void main(String[] args) {
+
+		/*
+		 * Parent1 obj = new Parent1(); obj.sum(32,23);
+		 */
+
+		Child1 obj = new Child1();
+
+		obj.sum(34, 34);
+
+		obj.sub(2, 1);
+
+		System.out.println(obj.getClass().getName());
+		System.out.println(obj.hashCode());
+		System.out.println(obj.toString());
+
+	}
+}
+
+
+note:
+``
+Object is the root class for every class(predefined or userdefined) in java
+which is available in java.lang package.
